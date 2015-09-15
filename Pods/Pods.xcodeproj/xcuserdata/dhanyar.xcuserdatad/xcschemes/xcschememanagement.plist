@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-instagram.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-instagramTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-instagramUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>60D1D3CBC94AB6FA78F5E2668C644863</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>816FF826581F293477B22B238AD44FB2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>968309B65ABCD797ABCCFDDFFE6DFFD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC9EDD84E05677884701BBB4E49CB774</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0A0843C35E4406010926441E5E9C150</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
