@@ -8,6 +8,7 @@
 
 #import "PhotoDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "MyDetailTableViewCell.h"
 
 @interface PhotoDetailsViewController ()
 
@@ -35,17 +36,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *detailTableIdentifier = @"DetailTableItem";
+    static NSString *detailTableIdentifier = @"detailTableItem";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:detailTableIdentifier];
+    MyDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:detailTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailTableIdentifier];
+        cell = [[MyDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailTableIdentifier];
     }
     
     NSString *imageUrl = self.selectedImage;
     
-    [cell.imageView setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"test.jpg"]];
+    [cell.myDetailImageView setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"test.jpg"]];
+    [cell.myDetailImageView setBounds:CGRectMake(0, 0, 300, 300)];
     
     return cell;
 }

@@ -16,6 +16,7 @@
 // @property (nonatomic,strong) NSURLSession *session;
 @property (nonatomic,strong) NSMutableArray *images;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+- (void)onRefresh;
 @end
 
 @implementation PhotosViewController
@@ -24,23 +25,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    /*
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:@"https://api.instagram.com/v1/media/popular?client_id=68f79eddb25342a595f46befb3efe00e"]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                // handle response
-                id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                // NSLog(@"response: %@", object[@"data"]);
-                //NSLog(@"response: %@", response);
-                //NSLog(@"data: %@", data);
-                self.images = object[@"data"];
-                // NSLog(@"response length: %lu", self.images.count);
-                [self.tableView reloadData];
-            }] resume];
-    */
-    
     NSURL *url = [NSURL URLWithString:@"https://api.instagram.com/v1/media/popular?client_id=68f79eddb25342a595f46befb3efe00e"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -48,9 +32,13 @@
         self.images = responseDictionary[@"data"];
         [self.tableView reloadData];
     }];
-    
+
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,18 +56,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MyTableViewCell *cell = [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myTableViewCell"];
     NSString *imageUrl = self.images[indexPath.row][@"images"][@"low_resolution"][@"url"];
     
     
-    [cell.imageView setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"test.jpg"]];
-    [cell.imageView setBounds:CGRectMake(0, 0, 300, 300)];
+    [cell.myImageView setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"test.jpg"]];
+    [cell.myImageView setBounds:CGRectMake(0, 0, 300, 300)];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"openPhotoDetailView" sender:self];
+    // [self performSegueWithIdentifier:@"openPhotoDetailView" sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -99,6 +87,16 @@
         // [self.tableView setAllowsSelection:YES];
     }
 }
+
+- (void)onRefresh {
+    NSURL *url = [NSURL URLWithString:@"https://api.instagram.com/v1/media/popular?client_id=68f79eddb25342a595f46befb3efe00e"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        [self.refreshControl endRefreshing];
+    }];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     NSLog(@"photo view will appear");

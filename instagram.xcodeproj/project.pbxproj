@@ -11,6 +11,7 @@
 		A04385551BA79F0D008E1587 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04385541BA79F0D008E1587 /* MyTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		A04385571BA7A56E008E1587 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A04385561BA7A56E008E1587 /* test.jpg */; settings = {ASSET_TAGS = (); }; };
 		A043855A1BA7CA66008E1587 /* PhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04385591BA7CA66008E1587 /* PhotoDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A04385A41BA90816008E1587 /* MyDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04385A31BA90816008E1587 /* MyDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		A09C68C81BA7952600977E3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A09C68C71BA7952600977E3D /* main.m */; };
 		A09C68CB1BA7952600977E3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A09C68CA1BA7952600977E3D /* AppDelegate.m */; };
 		A09C68D11BA7952600977E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09C68CF1BA7952600977E3D /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		A04385561BA7A56E008E1587 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		A04385581BA7CA66008E1587 /* PhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailsViewController.h; sourceTree = "<group>"; };
 		A04385591BA7CA66008E1587 /* PhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailsViewController.m; sourceTree = "<group>"; };
+		A04385A21BA90816008E1587 /* MyDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDetailTableViewCell.h; sourceTree = "<group>"; };
+		A04385A31BA90816008E1587 /* MyDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDetailTableViewCell.m; sourceTree = "<group>"; };
 		A09C68C31BA7952600977E3D /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09C68C71BA7952600977E3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A09C68C91BA7952600977E3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				A04385541BA79F0D008E1587 /* MyTableViewCell.m */,
 				A04385581BA7CA66008E1587 /* PhotoDetailsViewController.h */,
 				A04385591BA7CA66008E1587 /* PhotoDetailsViewController.m */,
+				A04385A21BA90816008E1587 /* MyDetailTableViewCell.h */,
+				A04385A31BA90816008E1587 /* MyDetailTableViewCell.m */,
 			);
 			path = instagram;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04385A41BA90816008E1587 /* MyDetailTableViewCell.m in Sources */,
 				A043854F1BA7993B008E1587 /* PhotosViewController.m in Sources */,
 				A04385551BA79F0D008E1587 /* MyTableViewCell.m in Sources */,
 				A09C68CB1BA7952600977E3D /* AppDelegate.m in Sources */,
